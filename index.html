@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#15152C" />
+    <title>Word Tray — 960 GRE words</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <script>
+      // Set the theme before first paint so there is no flash of the wrong one.
+      (function () {
+        try {
+          var saved = localStorage.getItem('wordtray.theme');
+          var light = matchMedia('(prefers-color-scheme: light)').matches;
+          var theme = saved === 'light' || saved === 'dark' ? saved : light ? 'light' : 'dark';
+          document.documentElement.dataset.theme = theme;
+          document
+            .querySelector('meta[name="theme-color"]')
+            .setAttribute('content', theme === 'light' ? '#F6F2E9' : '#15152C');
+        } catch (e) {
+          document.documentElement.dataset.theme = 'dark';
+        }
+      })();
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

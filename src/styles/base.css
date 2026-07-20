@@ -1,0 +1,62 @@
+@import './tokens.css';
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body, #root { margin: 0; padding: 0; }
+
+html { background: var(--c-bg); }
+
+body {
+  background: var(--c-bg);
+  color: var(--c-text);
+  font-family: var(--f-body);
+  font-size: var(--fs-md);
+  line-height: var(--lh-body);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  transition: background var(--dur-fast), color var(--dur-fast);
+}
+
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+
+:focus-visible { outline: 2px solid var(--c-alert); outline-offset: 3px; }
+
+input[type='search'] {
+  background: var(--c-surface);
+  border: var(--bw) solid var(--c-line);
+  border-radius: var(--r-sm);
+  color: var(--c-text);
+  font-family: var(--f-mono);
+  font-size: var(--fs-md);
+  padding: var(--s-3) var(--s-4);
+  width: 100%;
+  max-width: 20rem;
+}
+input[type='search']::placeholder { color: var(--c-dim); }
+input[type='search']:focus { outline: none; border-color: var(--c-accent); }
+
+/* Shared primitives — used by every screen, defined once. */
+.page { max-width: var(--page-max); margin: 0 auto; padding: var(--s-6) var(--s-5) var(--s-8); }
+
+.row { display: flex; gap: var(--s-3); align-items: center; flex-wrap: wrap; }
+.row--between { justify-content: space-between; }
+.row--center { justify-content: center; }
+.row--gap-lg { gap: var(--s-6); }
+
+.label {
+  font-family: var(--f-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--track-wide);
+  text-transform: uppercase;
+  color: var(--c-dim);
+}
+.label--alert { color: var(--c-alert); }
+.label b, .label strong { color: var(--c-text); font-weight: 700; }
+
+.prose { color: var(--c-dim); max-width: var(--measure); line-height: var(--lh-body); }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}

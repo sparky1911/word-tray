@@ -1,0 +1,24 @@
+.grades { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-3); }
+
+.grade {
+  padding: var(--s-5) var(--s-2);
+  border: var(--bw) solid var(--c-line);
+  border-radius: var(--r-sm);
+  background: var(--c-surface);
+  font-family: var(--f-mono);
+  font-size: var(--fs-sm);
+  letter-spacing: var(--track-btn);
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s-1);
+  transition: border-color var(--dur-fast), background var(--dur-fast);
+}
+.grade:hover { border-color: var(--tint); background: color-mix(in srgb, var(--tint) 12%, var(--c-surface)); }
+.grade[data-grade='again'] { --tint: var(--c-alert); }
+.grade[data-grade='good']  { --tint: var(--c-accent); }
+.grade[data-grade='easy']  { --tint: var(--c-ok); }
+
+.hint { font-size: var(--fs-2xs); opacity: 0.5; text-transform: none; letter-spacing: 0; }
+.key { font-size: var(--fs-2xs); opacity: 0.75; }

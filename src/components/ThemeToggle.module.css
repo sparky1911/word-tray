@@ -1,0 +1,18 @@
+.toggle {
+  display: inline-flex;
+  border: var(--bw) solid var(--c-line);
+  border-radius: var(--r-sm);
+  overflow: hidden;
+}
+.option {
+  font-family: var(--f-mono);
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--track-btn);
+  text-transform: uppercase;
+  padding: var(--s-2) var(--s-3);
+  color: var(--c-dim);
+  transition: background var(--dur-fast), color var(--dur-fast);
+}
+.option + .option { border-left: var(--bw) solid var(--c-line); }
+.option:hover { color: var(--c-text); }
+.option[aria-pressed='true'] { background: var(--c-raised); color: var(--c-text); }

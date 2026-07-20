@@ -1,0 +1,9 @@
+.spine { display: flex; gap: 3px; align-items: center; flex-shrink: 0; }
+.notch {
+  display: block;
+  width: 14px;
+  height: 4px;
+  background: currentColor;
+  opacity: 0.18;
+}
+.notch[data-on='true'] { opacity: 0.85; }

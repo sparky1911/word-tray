@@ -1,0 +1,21 @@
+.backdrop {
+  position: fixed; inset: 0; z-index: 10;
+  background: color-mix(in srgb, var(--c-bg) 82%, transparent);
+  display: grid; place-items: center; padding: var(--s-5);
+}
+.sheet {
+  background: var(--c-surface);
+  border: var(--bw) solid var(--c-line);
+  border-radius: var(--r-md);
+  padding: var(--s-6);
+  max-width: 26rem; width: 100%;
+}
+.sheet h2 { font-family: var(--f-display); font-size: var(--fs-lg); margin: 0 0 var(--s-5); }
+.list { display: grid; gap: var(--s-3); margin: 0; }
+.item { display: flex; justify-content: space-between; gap: var(--s-5); font-size: var(--fs-md); }
+.item dt { color: var(--c-dim); }
+.item dd {
+  margin: 0; font-family: var(--f-mono); font-size: var(--fs-sm); font-weight: 700;
+  color: var(--c-text); white-space: nowrap;
+}
+.group { margin-top: var(--s-5); }
